@@ -44,7 +44,7 @@ console.log(
 // 5. Write a JavaScript function to convert a string in abbreviated form.
 function convertStringToAbbreviatedForm(stringToConvert) {
   if (stringToConvert.length === 0) {
-    return "ERROR - String to convert is undefined";
+    return "ERROR - String to manipulate is undefined";
   }
 
   const arrayOfStrings = stringToConvert.trim().split(" ");
@@ -65,7 +65,7 @@ console.log(
 // 6. Write a JavaScript function to hide email addresses to protect from unauthorized user.
 function protectEmailAddress(emailAddress) {
   if (emailAddress.length === 0) {
-    return "ERROR - String to convert is undefined";
+    return "ERROR - String to manipulate is undefined";
   }
 
   const splittedEmailAddress = emailAddress.split("@");
@@ -85,7 +85,7 @@ console.log(
 // 7. Write a JavaScript function to parameterize a string.
 function parameterizeString(stringToParameterize) {
   if (stringToParameterize.length === 0) {
-    return "ERROR - String to convert is undefined";
+    return "ERROR - String to manipulate is undefined";
   }
 
   const arrayOfStrings = stringToParameterize.toLowerCase().split(" ");
@@ -111,7 +111,7 @@ console.log(
 // 8. Write a JavaScript function to capitalize the first letter of a string.
 function capitalizeFirstWordInAString(stringToCapitalize) {
   if (stringToCapitalize.length === 0) {
-    return "ERROR - String to convert is undefined";
+    return "ERROR - String to manipulate is undefined";
   }
 
   return (
@@ -127,7 +127,7 @@ console.log(
 // 9. Write a JavaScript function to capitalize the first letter of each word in a string.
 function capitalizeEveryWordInAString(stringToCapitalize) {
   if (stringToCapitalize.length === 0) {
-    return "ERROR - String to convert is undefined";
+    return "ERROR - String to manipulate is undefined";
   }
 
   const arrayOfStrings = stringToCapitalize.toLowerCase().split(" ");
@@ -152,7 +152,7 @@ console.log(
 // upper case letters to lower case, and lower case letters to upper case.
 function swapCaseForEachChar(stringToSwapCase) {
   if (stringToSwapCase.length === 0) {
-    return "ERROR - String to convert is undefined";
+    return "ERROR - String to manipulate is undefined";
   }
 
   let swappedString = "";
@@ -173,3 +173,43 @@ console.log(
   "10. Swaped string is: ",
   swapCaseForEachChar("AaB bcCd dDeE EEF Fff")
 );
+
+// 11. Write a JavaScript function to convert a string into camel case.
+function camelizeString(stringToCamelize) {
+  if (stringToCamelize.length === 0) {
+    return "ERROR - String to manipulate is undefined";
+  }
+
+  return stringToCamelize.replace(/\W+(.)/g, function(match, chr)
+       {
+            return chr.toUpperCase();
+        });
+
+  const myArrayString = stringToCamelize.split(" ");
+  let camelizedString = "";
+
+  for (let i = 0; i < myArrayString.length; i++) {
+    camelizedString +=
+      myArrayString[i].charAt(0).toUpperCase() + myArrayString[i].slice(1);
+  }
+
+  return camelizedString;
+}
+
+console.log(
+  "11. Camelized string is: ",
+  camelizeString("best JavaScript exercises")
+);
+
+// 12. Write a JavaScript function to uncamelize a string.
+function uncamelizeString(str, separator) {
+  if (typeof separator == "undefined") {
+    separator = " ";
+  }
+
+  return str.replace(/[A-Z]/g, function (char) {
+    return separator + char.toLowerCase();
+  });
+}
+
+console.log("12. Uncamelized string is: ", uncamelizeString("helloWoRld", "-"));

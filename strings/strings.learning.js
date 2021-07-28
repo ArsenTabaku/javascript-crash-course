@@ -24,3 +24,4 @@ console.log(stringToBeManipulated.includes('will'));    // Returns true if searc
 console.log(stringToBeManipulated.indexOf('Will'));     // Returns the position of the first occurrence of a substring.
 console.log(stringToBeManipulated.lastIndexOf('will')); // Returns the last occurrence of a substring in the string.
 console.log(stringToBeManipulated.slice(5,12));         // Returns a section of a string.
+console.log(stringToBeManipulated.match(/[aeoiu]/));    // Matches a string with a regular expression, and returns an array containing the results of that search.

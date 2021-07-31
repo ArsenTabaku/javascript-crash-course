@@ -93,5 +93,36 @@ console.log(
 // 11. Write a JavaScript function to check whether a given value is time string or not.
 console.log(
   "11. Is string a time value? => ",
-  validateRegEx("2:59:59", /^(0?|0?[1-9]|1[0-9]|2[0-4]):(0?[0-9]|[0-5][0-9]):(0?[0-9]|[0-5][0-9])$/)
+  validateRegEx(
+    "2:59:59",
+    /^(0?|0?[1-9]|1[0-9]|2[0-4]):(0?[0-9]|[0-5][0-9]):(0?[0-9]|[0-5][0-9])$/
+  )
+);
+
+// 12. Write a JavaScript function to check whether a given value is US zip code or not.
+console.log(
+  "12. Is US postal code valid? => ",
+  validateRegEx("12345-6789", /^(\d){5}(-\d{4})?$/)
+);
+
+// 13. Write a JavaScript function to check whether a given value is hexadecimal value or not.
+console.log(
+  "13. Is value hexadecimal? => ",
+  validateRegEx("f321da", /^[a-fA-F0-9]{6}$/)
+);
+
+// 14. Write a JavaScript function to check whether a given value is html or not.
+console.log(
+  "14. Is value html? => ",
+  validateRegEx("<tag/>", /<[a-z]+(\/)?>/)
+);
+
+// 15. Write a JavaScript function to check a given value contains dash and underscore.
+function doesValueContainsAlphaDashAndUnderscore(string) {
+  return string.match(/[-_]/gi);
+}
+
+console.log(
+  "15. Does string contain dash value hexadecimal? => ",
+  doesValueContainsAlphaDashAndUnderscore("f3-21_da")
 );

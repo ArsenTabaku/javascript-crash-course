@@ -43,10 +43,6 @@ console.log(
 
 // 5. Write a JavaScript function to convert a string in abbreviated form.
 function convertStringToAbbreviatedForm(stringToConvert) {
-  if (stringToConvert.length === 0) {
-    return "ERROR - String to manipulate is undefined";
-  }
-
   const arrayOfStrings = stringToConvert.trim().split(" ");
 
   let abbreviatedString = "";
@@ -64,10 +60,6 @@ console.log(
 
 // 6. Write a JavaScript function to hide email addresses to protect from unauthorized user.
 function protectEmailAddress(emailAddress) {
-  if (emailAddress.length === 0) {
-    return "ERROR - String to manipulate is undefined";
-  }
-
   const splittedEmailAddress = emailAddress.split("@");
   const splittedEmailPartOneHalf = splittedEmailAddress[0].slice(
     0,
@@ -84,10 +76,6 @@ console.log(
 
 // 7. Write a JavaScript function to parameterize a string.
 function parameterizeString(stringToParameterize) {
-  if (stringToParameterize.length === 0) {
-    return "ERROR - String to manipulate is undefined";
-  }
-
   const arrayOfStrings = stringToParameterize.toLowerCase().split(" ");
   let parameterizedString = "";
 
@@ -126,10 +114,6 @@ console.log(
 
 // 9. Write a JavaScript function to capitalize the first letter of each word in a string.
 function capitalizeEveryWordInAString(stringToCapitalize) {
-  if (stringToCapitalize.length === 0) {
-    return "ERROR - String to manipulate is undefined";
-  }
-
   const arrayOfStrings = stringToCapitalize.toLowerCase().split(" ");
   let capitalizedString = "";
 
@@ -151,10 +135,6 @@ console.log(
 // 10. Write a JavaScript function that takes a string which has lower and upper case letters as a parameter and converts
 // upper case letters to lower case, and lower case letters to upper case.
 function swapCaseForEachChar(stringToSwapCase) {
-  if (stringToSwapCase.length === 0) {
-    return "ERROR - String to manipulate is undefined";
-  }
-
   let swappedString = "";
 
   // NOTE: Spaces are considered as lowercase
@@ -176,24 +156,9 @@ console.log(
 
 // 11. Write a JavaScript function to convert a string into camel case.
 function camelizeString(stringToCamelize) {
-  if (stringToCamelize.length === 0) {
-    return "ERROR - String to manipulate is undefined";
-  }
-
-  return stringToCamelize.replace(/\W+(.)/g, function(match, chr)
-       {
-            return chr.toUpperCase();
-        });
-
-  const myArrayString = stringToCamelize.split(" ");
-  let camelizedString = "";
-
-  for (let i = 0; i < myArrayString.length; i++) {
-    camelizedString +=
-      myArrayString[i].charAt(0).toUpperCase() + myArrayString[i].slice(1);
-  }
-
-  return camelizedString;
+  return stringToCamelize.replace(/\W+(.)/g, function (match, chr) {
+    return chr.toUpperCase();
+  });
 }
 
 console.log(

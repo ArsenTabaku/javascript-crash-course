@@ -178,3 +178,64 @@ function uncamelizeString(str, separator) {
 }
 
 console.log("12. Uncamelized string is: ", uncamelizeString("helloWoRld", "-"));
+
+// 13. Write a JavaScript function to concatenates a given string n times (default is 1).
+function concatenateStringNTimes(stringToConcatenate, numberOfConcatenations) {
+  let concatenatedResult = "";
+
+  for (let i = 0; i < numberOfConcatenations; i++) {
+    concatenatedResult += stringToConcatenate;
+  }
+
+  return concatenatedResult;
+}
+
+console.log("13. Concatenated string is: ", concatenateStringNTimes("Name", 2));
+
+// 14. Write a JavaScript function to insert a string within a string at a particular position (default is 1).
+function insertStringAtGivenIndex(string, stringToBeAdded, index) {
+  return (
+    string.slice(0, index) +
+    stringToBeAdded +
+    string.slice(index, string.length)
+  );
+}
+
+console.log(
+  "14. Inserted string is: ",
+  insertStringAtGivenIndex("This is a JS tutorial", "ADDED", 2)
+);
+
+// 15. Write a JavaScript function to humanized number (Formats a number to a human-readable string.)
+function humanizeString(stringToHumanize) {
+  if (stringToHumanize.charAt(stringToHumanize.length - 1) === "1") {
+    return stringToHumanize + "st";
+  } else if (stringToHumanize.charAt(stringToHumanize.length - 1) === "2") {
+    return stringToHumanize + "nd";
+  } else if (stringToHumanize.charAt(stringToHumanize.length - 1) === "3") {
+    return stringToHumanize + "rd";
+  } else {
+    return stringToHumanize + "th";
+  }
+}
+
+console.log("15. Humanized string is: ", humanizeString("2056"));
+
+// 16. Write a JavaScript function to truncates a string if it is longer than the specified
+// number of characters. Truncated strings will end with a translatable ellipsis sequence ("…")
+// (by default) or specified characters.
+function truncateString(stringToTruncate, maxLength, endingSequence) {
+  if (stringToTruncate.length <= maxLength) {
+    return stringToTruncate;
+  }
+
+  if (!endingSequence) {
+    return stringToTruncate.slice(0, maxLength) + "...";
+  }
+  return stringToTruncate.slice(0, maxLength) + endingSequence;
+}
+
+console.log(
+  "16. Truncated string is: ",
+  truncateString("JS is very powerful and is being used everywhere", 25, '!!!')
+);

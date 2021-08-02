@@ -237,5 +237,72 @@ function truncateString(stringToTruncate, maxLength, endingSequence) {
 
 console.log(
   "16. Truncated string is: ",
-  truncateString("JS is very powerful and is being used everywhere", 25, '!!!')
+  truncateString("JS is very powerful and is being used everywhere", 25, "!!!")
+);
+
+// 17. Write a JavaScript function to chop a string into chunks of a given length.
+function splitStringIntoChunksOfSpecificLength(stringToSplit, chunkLength) {
+  let arrayOfSplittedStrings = [];
+
+  for (let i = 0; i < stringToSplit.length - chunkLength; i += chunkLength) {
+    arrayOfSplittedStrings.push(stringToSplit.slice(i, i + chunkLength));
+  }
+
+  return arrayOfSplittedStrings;
+}
+
+console.log(
+  "17. Chunks of the splitted string are: ",
+  splitStringIntoChunksOfSpecificLength("Mathematics", 3)
+);
+
+// 18. Write a JavaScript function to count the occurrence of a substring in a string.
+function findNumberOfOccurrences(string, stringToCheckOccurrences) {
+  return string.toLowerCase().match(new RegExp(stringToCheckOccurrences, "g"))
+    .length;
+}
+
+console.log(
+  "18. Number of occurrences is: ",
+  findNumberOfOccurrences("The quick brown fox jumps over the lazy dog", "the")
+);
+
+// 19. Write a JavaScript function that can pad (left, right) a string to get to a determined length.
+function padString(format, stringToPad, side) {
+  if (
+    stringToPad.length === format.length ||
+    stringToPad.length > format.length
+  ) {
+    return stringToPad;
+  }
+
+  if (side === "l") {
+    return (format + stringToPad).slice(format.length - stringToPad.length - 1);
+  } else {
+    return (stringToPad + format).slice(0, format.length);
+  }
+}
+
+console.log("19. Padded string is: ", padString("0000000", "123", "r"));
+
+// 20. Write a JavaScript function to get the part of a string before or after a specified character.
+function getPartOfStringBeforeOrAfterSpecifiedChar(
+  stringToTrim,
+  charToCheck,
+  space
+) {
+  if (space === "before") {
+    return stringToTrim.substring(0, stringToTrim.indexOf(charToCheck));
+  } else {
+    return stringToTrim.substring(stringToTrim.indexOf(charToCheck));
+  }
+}
+
+console.log(
+  "20. Extracted string is: ",
+  getPartOfStringBeforeOrAfterSpecifiedChar(
+    "w3resource: JavaScript Exercises",
+    ":",
+    "after"
+  )
 );

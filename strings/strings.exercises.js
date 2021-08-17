@@ -306,3 +306,44 @@ console.log(
     "after"
   )
 );
+
+// 21. Write a JavaScript function to alphabetize a given string.
+function alphabetizeString(string) {
+  return string.split("").sort().join("");
+}
+
+console.log("21. Alphabetized string is: ", alphabetizeString("United States"));
+
+// 22. Write a JavaScript function to remove the first occurrence of a given 'search string' from a string.
+function removeFirstOccurance(string, searchString) {
+  var indexOfFirstOccurance = string.indexOf(searchString);
+  return (
+    string.slice(0, indexOfFirstOccurance) +
+    string.slice(indexOfFirstOccurance + searchString.length)
+  );
+}
+
+console.log(
+  "22. String with first occurance removed is: ",
+  removeFirstOccurance("The quick brown fox jumps over the lazy dog", "the")
+);
+
+// 23. Write a JavaScript function to find a word within a string.
+function findNumberOfWords(string, searchString) {
+  return string.match(new RegExp(searchString, "g")).length;
+}
+
+console.log(
+  "23. Number of occurrences is: ",
+  findNumberOfWords("aa, bb, cc, dd, aa", "aa")
+);
+
+// 24. Write a JavaScript function check if a string ends with specified suffix.
+function checkIfStringEndsWithSuffix(string, suffix) {
+  return string.slice((string.length - suffix.length), string.length)  === suffix;
+}
+
+console.log(
+  "24. Does string ends with a suffix: ",
+  checkIfStringEndsWithSuffix("JS PHP PYTHON", "PYT1HON")
+);

@@ -126,3 +126,13 @@ console.log(
   "15. Does string contain dash value hexadecimal? => ",
   doesValueContainsAlphaDashAndUnderscore("f3-21_da")
 );
+
+// 16. Write a JavaScript function to convert a string to snake case.
+function convertToSnakeCase(string) {
+  return string.replace(/\W+/g, "_");
+}
+
+console.log(
+  "16. String converted to snake case is: => ",
+  convertToSnakeCase("legal notice")
+);

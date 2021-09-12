@@ -241,16 +241,152 @@ console.log("\n10. Floyd's Triangle: ");
 floydTriangle(5);
 
 // 11. Write a program to display the sum of the series [ 1+x+x^2/2!+x^3/3!+....].
+function calculateSumOfSeries(x, n) {
+  let sum = 1 + x;
 
-// 12. Write a program to find the sum of the series [ x - x^3 + x^5 + ......].
+  for (let i = 1; i < n; i++) {
+    let denominator = 1;
 
-// 13. Write a program to display the n terms of square natural number and their sum.
-// 1 4 9 16 ... n
+    for (let j = i + 1; j > 0; j--) {
+      denominator = denominator * j;
+    }
 
-// 14. Write a program to check whether a given number is a perfect number or not.
+    sum = sum + Math.pow(x, i + 1) / denominator;
+  }
 
-// 15. Write a program to find the perfect numbers within a given number of range.
+  console.log(sum);
+}
 
-// 16. Write a program to check whether a given number is an armstrong number or not.
+console.log("\n11. Sum of series: ");
+calculateSumOfSeries(3, 5);
 
-// 17. Write a program to find the Armstrong number for a given range of number.
+// 12. Write a program to find the perfect numbers within a given number of range.
+function perfectNumberWithinRange(minRange, maxRange) {
+  let perfectNumbers = [];
+
+  for (let j = minRange; j < maxRange; j++) {
+    let sum = 0;
+
+    for (let i = 1; i < j; i++) {
+      if (j % i == 0) {
+        sum += i;
+      }
+    }
+
+    if (sum == j) {
+      perfectNumbers.push(j);
+    }
+  }
+
+  console.log(perfectNumbers);
+}
+
+console.log("\n12. Perfect numbers within given range are: ");
+perfectNumberWithinRange(6, 66);
+
+// 13. Write a program to find the Armstrong number for a given range of number.
+function armstrongNumbersWithinRange(number) {
+  let temp = number;
+  let sum = 0;
+
+  while (temp > 0) {
+    let remainder = temp % 10;
+    sum += remainder * remainder * remainder;
+
+    temp = parseInt(temp / 10);
+  }
+
+  if (sum == number) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log("\n13. Is number armstrong: ", armstrongNumbersWithinRange(153));
+
+// 14. Write a program in C to display the pattern like a diamond.
+//     *
+//    ***
+//   *****
+//  *******
+// *********
+//  *******
+//   *****
+//    ***
+//     *
+
+function drawDiamand(n) {
+  drawDiamandUpperAndMiddle(n);
+  drawDiamandBottom(n);
+}
+
+function drawDiamandUpperAndMiddle(n) {
+  let pattern = "";
+
+  for (let i = 0; i < n; i++) {
+    pattern = "";
+
+    for (let j = 0; j < n - i - 1; j++) {
+      pattern += "_";
+    }
+
+    for (let k = 0; k < (i + 1) * 2 - 1; k++) {
+      pattern += "*";
+    }
+
+    console.log(pattern);
+  }
+}
+
+function drawDiamandBottom(n) {
+  let pattern = "";
+
+  for (let i = 0; i < n - 1; i++) {
+    pattern = "";
+
+    for (let j = 0; j < i + 1; j++) {
+      pattern += "_";
+    }
+
+    for (let k = 0; k < (n - i - 1) * 2 - 1; k++) {
+      pattern += "*";
+    }
+
+    console.log(pattern);
+  }
+}
+
+console.log("\n14. Diamand drawn with starts is: ", drawDiamand(5));
+
+// 15. Write a C program to display Pascal's triangle.
+//         1
+//       1   1
+//     1   2   1
+//   1   3   3   1
+// 1   4   6   4   1
+
+function displayPascalsTriangle(n) {
+  let pattern = "";
+
+  for (let i = 0; i < n; i++) {
+    pattern = "";
+
+    for (let blk = 1; blk <= n - i; blk++) {
+      pattern += "  ";
+    }
+
+    for (let j = 0; j <= i; j++) {
+      if (j == 0 || i == 0) {
+        c = 1;
+      } else {
+        c = (c * (i - j + 1)) / j;
+      }
+
+      pattern += "   " + c;
+    }
+    console.log(pattern);
+  }
+}
+
+console.log("\n15. Pascal's triangle: ", displayPascalsTriangle(5));

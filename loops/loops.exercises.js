@@ -328,7 +328,7 @@ function drawDiamandUpperAndMiddle(n) {
     pattern = "";
 
     for (let j = 0; j < n - i - 1; j++) {
-      pattern += "_";
+      pattern += " ";
     }
 
     for (let k = 0; k < (i + 1) * 2 - 1; k++) {
@@ -346,7 +346,7 @@ function drawDiamandBottom(n) {
     pattern = "";
 
     for (let j = 0; j < i + 1; j++) {
-      pattern += "_";
+      pattern += " ";
     }
 
     for (let k = 0; k < (n - i - 1) * 2 - 1; k++) {
@@ -368,22 +368,23 @@ console.log("\n14. Diamand drawn with starts is: ", drawDiamand(5));
 
 function displayPascalsTriangle(n) {
   let pattern = "";
+  let number;
 
   for (let i = 0; i < n; i++) {
     pattern = "";
 
-    for (let blk = 1; blk <= n - i; blk++) {
+    for (let k = 1; k <= n - i; k++) {
       pattern += "  ";
     }
 
     for (let j = 0; j <= i; j++) {
       if (j == 0 || i == 0) {
-        c = 1;
+        number = 1;
       } else {
-        c = (c * (i - j + 1)) / j;
+        number = (number * (i - j + 1)) / j;
       }
 
-      pattern += "   " + c;
+      pattern += "   " + number;
     }
     console.log(pattern);
   }

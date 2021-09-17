@@ -1,0 +1,15 @@
+{
+    "name": "JS-Ninja",
+    "version": "0.0.1",
+    "author": "Arsen",
+    "description": "JavaScript exercises beginner to advanced",
+    "license": "All rights reserved",
+    "scripts": {
+        "run.arrays.learning": "cd arrays && node arrays.learning.js",
+        "run.arrays.exercises": "cd arrays && node arrays.exercises.js",
+        "run.loops.exercises": "cd loops && node loops.exercises.js",
+        "run.regex.exercises": "cd regex && node regex.exercises.js",
+        "run.strings.learning": "cd strings && node strings.learning.js",
+        "run.strings.exercises": "cd strings && node strings.exercises.js"
+    }
+}

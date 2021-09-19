@@ -203,3 +203,114 @@ console.log(
   "10. Binary search result are: ",
   binarySearch(new Array(3, 5, 7, 1, 8), 3, 0, 5)
 );
+
+// 11. Write a JavaScript program to compute the union of two arrays.
+function unionArrays(array1, array2) {
+  const arrayUnion = array1.concat(array2);
+  const stringifiedArrayUnion = arrayUnion.join("-");
+
+  return stringifiedArrayUnion.split("-");
+}
+
+console.log(
+  "11. Union of array is: ",
+  unionArrays(new Array(3, 5, 7, 1, 8), new Array(3, 0, 5))
+);
+
+// 12.Find the longest common starting substring in a set of strings.
+function longestSubstringInAString(array) {
+  const sortedArray = array.concat().sort(),
+    a1 = sortedArray[0],
+    a2 = sortedArray[sortedArray.length - 1];
+  let i = 0;
+
+  while (i < a1.length && a1.charAt(i) === a2.charAt(i)) {
+    i++;
+  }
+  return a1.substring(0, i);
+}
+
+console.log("12. ", longestSubstringInAString(["go", "google"]));
+
+// 13. Write a JavaScript function to merge two arrays and removes all duplicates elements.
+function joinArraysAndRemoveDublicates(array1, array2) {
+  return removeDublicatedItems(array1.concat(array2));
+}
+
+console.log(
+  "13. ",
+  joinArraysAndRemoveDublicates(new Array(3, 5, 7, 1, 8), new Array(3, 0, 5))
+);
+
+// 14. Write a JavaScript function to find an array contains a specific element.
+function contains(array, element) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === element) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+console.log("14. ", contains(new Array(3, 5, 7, 1, 8), 2));
+
+// 15. Write a JavaScript function to remove a specific element from an array.
+function removeElement(array, element) {
+  let newArray = [];
+
+  array.forEach((el) => {
+    if (el !== element) {
+      newArray.push(el);
+    }
+  });
+
+  return newArray;
+}
+
+console.log("15. ", removeElement(new Array(3, 5, 7, 1, 8), 5));
+
+// 16. Write a JavaScript function to get a random item from an array.
+function getRandomItem(array) {
+  return array[Math.floor(Math.random() * array.length)];
+}
+
+console.log("16. ", getRandomItem(new Array(3, 5, 7, 1, 8)));
+
+// 17. Write a JavaScript function to move an array element from one position to another.
+function switchPosition(array, oldIndex, newIndex) {
+  let temp = array[oldIndex];
+  array[oldIndex] = array[newIndex];
+  array[newIndex] = temp;
+
+  return array;
+}
+
+console.log("17. ", switchPosition(new Array(3, 5, 7, 1, 8), 0, 3));
+
+// 18. Write a JavaScript function to filter false, null, 0 and blank values from an array.
+function filterElements(array) {
+  let cleanArray = [];
+
+  array.forEach((el) => {
+    if (el !== false && el !== null && el !== 0 && el !== "") {
+      cleanArray.push(el);
+    }
+  });
+
+  return cleanArray;
+}
+
+console.log("18. ", filterElements(new Array(3, 5, null, 1, 0)));
+
+// 19. Write a JavaScript function to generate an array of specified length, filled with integer numbers, increase by one from starting position.
+function generateArray(start, arrayLength) {
+  let array = new Array(arrayLength);
+
+  for (let i = 0; i < arrayLength; i++, start++) {
+    array[i] = start;
+  }
+  return array;
+}
+
+console.log(generateArray(1, 4));
